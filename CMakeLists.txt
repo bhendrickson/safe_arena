@@ -10,8 +10,7 @@ include_directories(
 include(ExternalProject)
 
 ExternalProject_Add(gsl
-    URL https://github.com/Microsoft/GSL/archive/ad0905c08ba7ef170f3ce8b807ca822d7db108ac.tar.gz
-    URL_HASH SHA256=b9e3cc5cf0c69b63705063bbe26fe43a58d6986de64338e2e4374bd9eb3a0241
+    URL https://github.com/Microsoft/GSL/archive/a9f865900d28b854de5ead971aadb82e5ef9ed40.zip
     CONFIGURE_COMMAND ""
     BUILD_COMMAND ""
     INSTALL_COMMAND ""

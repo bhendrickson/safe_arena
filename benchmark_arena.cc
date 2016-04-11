@@ -67,9 +67,14 @@ static int64_t measure(Func&& func) {
 void test() {
   int64_t arena_ms = measure([] {
     for (size_t i = 0; i < 30; i ++) {
-      abc::arena arena;
-      int index = 0;
-      with_arena::MakeTree(arena, index, 20);
+	  with_arena::node* n = nullptr;
+	  {
+		  abc::arena arena; 
+		  int index = 0;
+		  n = with_arena::MakeTree(arena, index, 20);
+		  arena.clear(); 
+	  }
+	  std::cout << "size: " << n->data.size();
     }
   });
 
