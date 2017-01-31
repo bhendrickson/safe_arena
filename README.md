@@ -36,8 +36,8 @@ Execution time to make a simple binary tree structure:
 
 |                 | std::unique_ptr + std::vector | abc::arena + gsl::span | speedup  |
 | --------------- | ----------------------------- | ---------------------- | -------- |
-| Linux (clang)   | 1007 ms                       | 3143 ms                | 3.12x |
-| Windows (msvc)  | 1261 ms                       | 7621 ms                | 6.04x |
+| Linux (clang)   | 3143 ms                       | 1007 ms                | 3.12x    |
+| Windows (msvc)  | 7621 ms                       | 1261 ms                | 6.04x    |
 
 So using an arena makes this about 3x to 6x faster. Results between Linux and
 Windows are not directly comparable, because although they were on the same
