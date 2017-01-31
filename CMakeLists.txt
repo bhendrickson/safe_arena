@@ -21,3 +21,4 @@ if (UNIX)
 endif()
 
 add_executable(benchmark_arena benchmark_arena.cc)
+add_dependencies(benchmark_arena gsl)
