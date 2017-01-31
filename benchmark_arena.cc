@@ -56,25 +56,22 @@ uint64_t now_ms() {
          std::chrono::milliseconds(1);
 }
 
-template<class Func>
+template <class Func>
 static int64_t measure(Func&& func) {
-    auto start = std::chrono::steady_clock::now();
-    func();
-    auto end = std::chrono::steady_clock::now();
-    return (end - start) / std::chrono::milliseconds(1);
+  auto start = std::chrono::steady_clock::now();
+  func();
+  auto end = std::chrono::steady_clock::now();
+  return (end - start) / std::chrono::milliseconds(1);
 }
 
 void test() {
   int64_t arena_ms = measure([] {
-    for (size_t i = 0; i < 30; i ++) {
-	  with_arena::node* n = nullptr;
-	  {
-		  abc::arena arena; 
-		  int index = 0;
-		  n = with_arena::MakeTree(arena, index, 20);
-		  arena.clear(); 
-	  }
-	  std::cout << "size: " << n->data.size();
+    for (size_t i = 0; i < 30; i++) {
+      with_arena::node* n = nullptr;
+      abc::arena arena;
+      int index = 0;
+      n = with_arena::MakeTree(arena, index, 20);
+      arena.clear();
     }
   });
 
